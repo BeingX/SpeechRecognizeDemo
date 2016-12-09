@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E7F435601DFAEB1C00EE9931 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F4355F1DFAEB1C00EE9931 /* main.m */; };
+		E7F435631DFAEB1C00EE9931 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F435621DFAEB1C00EE9931 /* AppDelegate.m */; };
+		E7F4356B1DFAEB1C00EE9931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F4356A1DFAEB1C00EE9931 /* Assets.xcassets */; };
+		E7F4356E1DFAEB1C00EE9931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F4356C1DFAEB1C00EE9931 /* LaunchScreen.storyboard */; };
+		E7F435781DFAEB5D00EE9931 /* iOSSpeechViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F435761DFAEB5D00EE9931 /* iOSSpeechViewController.m */; };
+		E7F435791DFAEB5D00EE9931 /* iOSSpeechViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7F435771DFAEB5D00EE9931 /* iOSSpeechViewController.xib */; };
+		E7F4357B1DFAEDAF00EE9931 /* 录音.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E7F4357A1DFAEDAF00EE9931 /* 录音.m4a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E7F4355B1DFAEB1C00EE9931 /* iOS原生语音识别.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS原生语音识别.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7F4355F1DFAEB1C00EE9931 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E7F435611DFAEB1C00EE9931 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E7F435621DFAEB1C00EE9931 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E7F4356A1DFAEB1C00EE9931 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E7F4356D1DFAEB1C00EE9931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E7F4356F1DFAEB1C00EE9931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7F435751DFAEB5D00EE9931 /* iOSSpeechViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSSpeechViewController.h; sourceTree = "<group>"; };
+		E7F435761DFAEB5D00EE9931 /* iOSSpeechViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOSSpeechViewController.m; sourceTree = "<group>"; };
+		E7F435771DFAEB5D00EE9931 /* iOSSpeechViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iOSSpeechViewController.xib; sourceTree = "<group>"; };
+		E7F4357A1DFAEDAF00EE9931 /* 录音.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "录音.m4a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E7F435581DFAEB1C00EE9931 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E7F435521DFAEB1C00EE9931 = {
+			isa = PBXGroup;
+			children = (
+				E7F4355D1DFAEB1C00EE9931 /* iOS原生语音识别 */,
+				E7F4355C1DFAEB1C00EE9931 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E7F4355C1DFAEB1C00EE9931 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7F4355B1DFAEB1C00EE9931 /* iOS原生语音识别.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7F4355D1DFAEB1C00EE9931 /* iOS原生语音识别 */ = {
+			isa = PBXGroup;
+			children = (
+				E7F4357A1DFAEDAF00EE9931 /* 录音.m4a */,
+				E7F435751DFAEB5D00EE9931 /* iOSSpeechViewController.h */,
+				E7F435761DFAEB5D00EE9931 /* iOSSpeechViewController.m */,
+				E7F435771DFAEB5D00EE9931 /* iOSSpeechViewController.xib */,
+				E7F435611DFAEB1C00EE9931 /* AppDelegate.h */,
+				E7F435621DFAEB1C00EE9931 /* AppDelegate.m */,
+				E7F4356A1DFAEB1C00EE9931 /* Assets.xcassets */,
+				E7F4356C1DFAEB1C00EE9931 /* LaunchScreen.storyboard */,
+				E7F4356F1DFAEB1C00EE9931 /* Info.plist */,
+				E7F4355E1DFAEB1C00EE9931 /* Supporting Files */,
+			);
+			path = "iOS原生语音识别";
+			sourceTree = "<group>";
+		};
+		E7F4355E1DFAEB1C00EE9931 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7F4355F1DFAEB1C00EE9931 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E7F4355A1DFAEB1C00EE9931 /* iOS原生语音识别 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7F435721DFAEB1C00EE9931 /* Build configuration list for PBXNativeTarget "iOS原生语音识别" */;
+			buildPhases = (
+				E7F435571DFAEB1C00EE9931 /* Sources */,
+				E7F435581DFAEB1C00EE9931 /* Frameworks */,
+				E7F435591DFAEB1C00EE9931 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS原生语音识别";
+			productName = "iOS原生语音识别";
+			productReference = E7F4355B1DFAEB1C00EE9931 /* iOS原生语音识别.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E7F435531DFAEB1C00EE9931 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "尹啟星";
+				TargetAttributes = {
+					E7F4355A1DFAEB1C00EE9931 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = AH2XQKX9E7;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E7F435561DFAEB1C00EE9931 /* Build configuration list for PBXProject "iOS原生语音识别" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E7F435521DFAEB1C00EE9931;
+			productRefGroup = E7F4355C1DFAEB1C00EE9931 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7F4355A1DFAEB1C00EE9931 /* iOS原生语音识别 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E7F435591DFAEB1C00EE9931 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F4356E1DFAEB1C00EE9931 /* LaunchScreen.storyboard in Resources */,
+				E7F4356B1DFAEB1C00EE9931 /* Assets.xcassets in Resources */,
+				E7F4357B1DFAEDAF00EE9931 /* 录音.m4a in Resources */,
+				E7F435791DFAEB5D00EE9931 /* iOSSpeechViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E7F435571DFAEB1C00EE9931 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F435631DFAEB1C00EE9931 /* AppDelegate.m in Sources */,
+				E7F435781DFAEB5D00EE9931 /* iOSSpeechViewController.m in Sources */,
+				E7F435601DFAEB1C00EE9931 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E7F4356C1DFAEB1C00EE9931 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7F4356D1DFAEB1C00EE9931 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E7F435701DFAEB1C00EE9931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E7F435711DFAEB1C00EE9931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E7F435731DFAEB1C00EE9931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AH2XQKX9E7;
+				INFOPLIST_FILE = "iOS原生语音识别/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E7F435741DFAEB1C00EE9931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AH2XQKX9E7;
+				INFOPLIST_FILE = "iOS原生语音识别/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E7F435561DFAEB1C00EE9931 /* Build configuration list for PBXProject "iOS原生语音识别" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7F435701DFAEB1C00EE9931 /* Debug */,
+				E7F435711DFAEB1C00EE9931 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7F435721DFAEB1C00EE9931 /* Build configuration list for PBXNativeTarget "iOS原生语音识别" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7F435731DFAEB1C00EE9931 /* Debug */,
+				E7F435741DFAEB1C00EE9931 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E7F435531DFAEB1C00EE9931 /* Project object */;
+}
