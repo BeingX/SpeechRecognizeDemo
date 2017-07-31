@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.recordButton.enabled = NO;
+    _recordButton.enabled = NO;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -38,13 +38,14 @@
     NSURL *url =[[NSBundle mainBundle] URLForResource:@"录音.m4a" withExtension:nil];
     if (!url) return;
     SFSpeechURLRecognitionRequest *res =[[SFSpeechURLRecognitionRequest alloc] initWithURL:url];
+    __weak typeof(self) weakSelf = self;
     [localRecognizer recognitionTaskWithRequest:res resultHandler:^(SFSpeechRecognitionResult * _Nullable result, NSError * _Nullable error) {
         if (error) {
             NSLog(@"语音识别解析失败,%@",error);
         }
         else
         {
-            self.resultStringLable.text = result.bestTranscription.formattedString;
+            weakSelf.resultStringLable.text = result.bestTranscription.formattedString;
         }
     }];
 
@@ -52,25 +53,26 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    __weak typeof(self) weakSelf = self;
     [SFSpeechRecognizer  requestAuthorization:^(SFSpeechRecognizerAuthorizationStatus status) {
         dispatch_async(dispatch_get_main_queue(), ^{
             switch (status) {
                 case SFSpeechRecognizerAuthorizationStatusNotDetermined:
-                    self.recordButton.enabled = NO;
-                    [self.recordButton setTitle:@"语音识别未授权" forState:UIControlStateDisabled];
+                    weakSelf.recordButton.enabled = NO;
+                    [weakSelf.recordButton setTitle:@"语音识别未授权" forState:UIControlStateDisabled];
                     break;
                 case SFSpeechRecognizerAuthorizationStatusDenied:
-                    self.recordButton.enabled = NO;
-                    [self.recordButton setTitle:@"用户未授权使用语音识别" forState:UIControlStateDisabled];
+                    weakSelf.recordButton.enabled = NO;
+                    [weakSelf.recordButton setTitle:@"用户未授权使用语音识别" forState:UIControlStateDisabled];
                     break;
                 case SFSpeechRecognizerAuthorizationStatusRestricted:
-                    self.recordButton.enabled = NO;
-                    [self.recordButton setTitle:@"语音识别在这台设备上受到限制" forState:UIControlStateDisabled];
+                    weakSelf.recordButton.enabled = NO;
+                    [weakSelf.recordButton setTitle:@"语音识别在这台设备上受到限制" forState:UIControlStateDisabled];
                     
                     break;
                 case SFSpeechRecognizerAuthorizationStatusAuthorized:
-                    self.recordButton.enabled = YES;
-                    [self.recordButton setTitle:@"开始录音" forState:UIControlStateNormal];
+                    weakSelf.recordButton.enabled = YES;
+                    [weakSelf.recordButton setTitle:@"开始录音" forState:UIControlStateNormal];
                     break;
                     
                 default:
@@ -136,6 +138,8 @@
     }];
     
     AVAudioFormat *recordingFormat = [inputNode outputFormatForBus:0];
+    //在添加tap之前先移除上一个  不然有可能报"Terminating app due to uncaught exception 'com.apple.coreaudio.avfaudio',"之类的错误
+    [inputNode removeTapOnBus:0];
     [inputNode installTapOnBus:0 bufferSize:1024 format:recordingFormat block:^(AVAudioPCMBuffer * _Nonnull buffer, AVAudioTime * _Nonnull when) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (strongSelf.recognitionRequest) {
@@ -176,19 +180,6 @@
         [self.recordButton setTitle:@"语音识别不可用" forState:UIControlStateDisabled];
     }
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
