@@ -6,6 +6,7 @@
 //  Copyright © 2016年 yinqixing. All rights reserved.
 //
 
+#define LoadingText @"正在录音。。。"
 #import "iOSSpeechViewController.h"
 #import <Speech/Speech.h>
 #import <AVFoundation/AVFoundation.h>
@@ -21,35 +22,14 @@
 
 @implementation iOSSpeechViewController
 
+#pragma mark - lifeCycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _recordButton.enabled = NO;
     // Do any additional setup after loading the view from its nib.
 }
 
-/**
- 识别本地音频文件
-
- @param sender <#sender description#>
- */
-- (IBAction)recognizeLocalAudioFile:(UIButton *)sender {
-    NSLocale *local =[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
-    SFSpeechRecognizer *localRecognizer =[[SFSpeechRecognizer alloc] initWithLocale:local];
-    NSURL *url =[[NSBundle mainBundle] URLForResource:@"录音.m4a" withExtension:nil];
-    if (!url) return;
-    SFSpeechURLRecognitionRequest *res =[[SFSpeechURLRecognitionRequest alloc] initWithURL:url];
-    __weak typeof(self) weakSelf = self;
-    [localRecognizer recognitionTaskWithRequest:res resultHandler:^(SFSpeechRecognitionResult * _Nullable result, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"语音识别解析失败,%@",error);
-        }
-        else
-        {
-            weakSelf.resultStringLable.text = result.bestTranscription.formattedString;
-        }
-    }];
-
-}
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -78,17 +58,39 @@
                 default:
                     break;
             }
-  
+            
         });
     }];
 }
+
+#pragma mark - action
+/**
+ 识别本地音频文件
+ 
+ @param sender <#sender description#>
+ */
+- (IBAction)recognizeLocalAudioFile:(UIButton *)sender {
+    NSLocale *local =[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+    SFSpeechRecognizer *localRecognizer =[[SFSpeechRecognizer alloc] initWithLocale:local];
+    NSURL *url =[[NSBundle mainBundle] URLForResource:@"录音.m4a" withExtension:nil];
+    if (!url) return;
+    SFSpeechURLRecognitionRequest *res =[[SFSpeechURLRecognitionRequest alloc] initWithURL:url];
+    __weak typeof(self) weakSelf = self;
+    [localRecognizer recognitionTaskWithRequest:res resultHandler:^(SFSpeechRecognitionResult * _Nullable result, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"语音识别解析失败,%@",error);
+        }
+        else
+        {
+            weakSelf.resultStringLable.text = result.bestTranscription.formattedString;
+        }
+    }];
+    
+}
+
 - (IBAction)recordButtonClicked:(UIButton *)sender {
     if (self.audioEngine.isRunning) {
-        [self.audioEngine stop];
-        if (_recognitionRequest) {
-            [_recognitionRequest endAudio];
-        }
-        self.recordButton.enabled = NO;
+        [self endRecording];
         [self.recordButton setTitle:@"正在停止" forState:UIControlStateDisabled];
         
     }
@@ -96,6 +98,23 @@
         [self startRecording];
         [self.recordButton setTitle:@"停止录音" forState:UIControlStateNormal];
         
+    }
+}
+
+- (void)endRecording{
+    [self.audioEngine stop];
+    if (_recognitionRequest) {
+        [_recognitionRequest endAudio];
+    }
+    
+    if (_recognitionTask) {
+        [_recognitionTask cancel];
+        _recognitionTask = nil;
+    }
+    self.recordButton.enabled = NO;
+    
+    if ([self.resultStringLable.text isEqualToString:LoadingText]) {
+        self.resultStringLable.text = @"";
     }
 }
 - (void)startRecording{
@@ -134,7 +153,7 @@
             strongSelf.recordButton.enabled = YES;
             [strongSelf.recordButton setTitle:@"开始录音" forState:UIControlStateNormal];
         }
-     
+        
     }];
     
     AVAudioFormat *recordingFormat = [inputNode outputFormatForBus:0];
@@ -149,10 +168,10 @@
     
     [self.audioEngine prepare];
     [self.audioEngine startAndReturnError:&error];
-     NSParameterAssert(!error);
-    self.resultStringLable.text = @"正在录音。。。";
+    NSParameterAssert(!error);
+    self.resultStringLable.text = LoadingText;
 }
-#pragma mark - lazyload
+#pragma mark - property
 - (AVAudioEngine *)audioEngine{
     if (!_audioEngine) {
         _audioEngine = [[AVAudioEngine alloc] init];
@@ -183,3 +202,4 @@
 
 
 @end
+
